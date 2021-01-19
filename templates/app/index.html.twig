@@ -4,11 +4,12 @@
 {% endblock %}
 
 {% block stylesheets %}
-{# 'app' must match the first argument to addEntry() in webpack.config.js #}
-{{ encore_entry_link_tags('app') }}
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+    {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+    {{ encore_entry_link_tags('app') }}
 
-<!-- Renders a link tag (if your module requires any CSS)
-                 <link rel="stylesheet" href="/build/app.css"> -->
+    <!-- Renders a link tag (if your module requires any CSS)
+    <link rel="stylesheet" href="/build/app.css"> -->
 {% endblock %}
 
 {% block body %}

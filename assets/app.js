@@ -5,19 +5,36 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
 
+// React
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './js/components/Navbar';
+import HomePage from './js/pages/HomePage';
+import CustomersPage from './js/pages/CustomersPage';
+import CustomersPageWithPagination from './js/pages/CustomersPageWithpagination';
+
 console.log('Hello World !!');
 
 const App = () => {
-  return <h1>Bonjour à tous !</h1>
+  return (
+    <HashRouter>
+      <Navbar />
+
+      <main className="container pt-5">
+        <Switch>
+          <Route path="/customers" component={CustomersPage} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </main>
+    </HashRouter>
+  )
 }
 
 const rooElement = document.querySelector('#app');
